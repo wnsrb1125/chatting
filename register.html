@@ -1,0 +1,33 @@
+<!--회원 가입페이지입니다.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="register.php" method="post" id="frm">
+   아이디  &nbsp; &nbsp; &nbsp;&nbsp;  &nbsp;&nbsp;   <input type="text" name="userid" id="userid"><br>
+    비밀번호  &nbsp;  &nbsp;&nbsp;   &nbsp; <input type="password" name="password" id="p"><br>
+    비밀번호 확인        <input type="password" id="w">
+</form>
+    <input type="button" value="회원가입" onclick="reg()">
+<script>
+
+    function reg() {
+        var id = document.getElementById('userid').value;
+        var pass = document.getElementById('p').value;
+        var word = document.getElementById('w').value;
+        if(pass != word || pass == '' || word =='') {
+            alert('잘못된 값 입력.')
+        }
+        else if(id.length >= 12) {
+            alert("아이디는 12자리 까지만 가능합니다.")
+        }
+        else {
+            document.getElementById('frm').submit();
+        }
+    }
+</script>
+</body>
+</html>

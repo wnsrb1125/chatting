@@ -1,0 +1,40 @@
+<!--로그인하는 페이지입니다.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" onclick="regist()" value="회원가입">
+<form method="post" action="login.php" id="frm">
+    <input type="text" name="userid" id="id">
+    <input type="password" name="userpw" id="pw">
+    <input type="button" value="로그인" onclick="identify()">
+</form>
+<script>
+
+    function regist() {
+        location.href="register.html";
+    }
+    function logout() {
+        location.href="logout.php";
+    }
+
+
+    function identify() {
+        var id = document.getElementById('id').value ;
+        var pw = document.getElementById('pw').value ;
+        if(id == '' || pw == '') {
+            alert("값이 잘못되었습니다 다시 입력하세요");
+        }
+        else if(id.length >= 12) {
+            alert("아이디는 12자리 까지만 가능합니다.")
+        }
+        else
+            document.getElementById('frm').submit();
+    }
+</script>
+
+</body>
+</html>
